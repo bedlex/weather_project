@@ -1,0 +1,25 @@
+body{
+    background-color:#242529;
+    color: #d8e6e5;
+    font-family: 'Song Myung', serif;
+}
+section{
+    margin: 30px;
+}
+.btn{
+    color: #d8e6e5;
+}
+#time{
+    font-size: 25px;
+}
+#temp{
+
+    font-size: 22px;
+}
+#city{
+    font-size: 52px;
+}
+
+strong{
+    font-weight: 100;
+}
