@@ -37,7 +37,7 @@ function time(off){
   var tz = dt.getTimezoneOffset();
   dt.setMinutes(dt.getMinutes()+tz+off)
   var year = dt.getFullYear()
-  var month = dt.getMonth()
+  var month = dt.getMonth() + 1
   var day = dt.getDate()
   var hours = dt.getHours()
   var minutes = dt.getMinutes()
@@ -59,6 +59,7 @@ function time(off){
     else{
         document.body.className="body1";
     }
+    console.log(month)
   var time_str = align(hours)+":"+align(minutes)+"<br>"+align(day)+"/"+align(month)+"/"+year
 
   return time_str
