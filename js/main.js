@@ -77,7 +77,7 @@ function check(){
                 $.get('https://api.openweathermap.org/data/2.5/weather?q='+city+','+country+'&appid='+key,function(data){
                     $("#city").text(data.name)                    
                     $("#temp").html(farengheit(data.main.temp)+" F<sup>o<sup>")                    
-                    $("#pressure").html("Pressure: "+data.main.pressure+" Mpa")
+                    $("#pressure").html("Pressure: "+data.main.pressure+" Hpa")
                     $("#humidity").html("Humidity: "+data.main.humidity+' %')
                     $("#temp_min_text").html("Minimal Temperature: "+farengheit(data.main.temp_min)+" F<sup>o<sup>")
                     $("#temp_max_text").html("Maximal Temperature: " +farengheit(data.main.temp_max)+" F<sup>o<sup>")
