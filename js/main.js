@@ -42,22 +42,22 @@ function time(off){
   var hours = dt.getHours()
   var minutes = dt.getMinutes()
     if (hours>=0 && hours <5){
-        document.body.style.backgroundColor = "#242529";
+        document.body.className="body1";
     }
     else if (hours>=5 && hours <11){
-        document.body.style.backgroundColor = "#2d3654";
+        document.body.className="body2";
     }
     else if (hours>=11 && hours <17)
     {
-        document.body.style.backgroundColor = "#2d402d";
+        document.body.className="body3";
        
     }
     else if (hours >= 17 && hours < 21)
     {
-        document.body.style.backgroundColor = "#33234d";
+        document.body.className="body4";
     }
     else{
-        document.body.style.backgroundColor = "#242529";
+        document.body.className="body1";
     }
   var time_str = align(hours)+":"+align(minutes)+"<br>"+align(day)+"/"+align(month)+"/"+year
 

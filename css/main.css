@@ -2,7 +2,34 @@ body{
     background-color:#242529;
     color: #d8e6e5;
     font-family: 'Song Myung', serif;
+    transition: 2s linear;
+
 }
+.body1{
+    background-color:#242529;
+    color: #d8e6e5;
+    font-family: 'Song Myung', serif;
+    transition: 2s linear;
+}
+.body2{
+    background-color:#2d3654;
+    color: #d8e6e5;
+    font-family: 'Song Myung', serif;
+    transition: 2s linear;
+}  
+.body3{
+    background-color:#2d402d;
+    color: #d8e6e5;
+    font-family: 'Song Myung', serif;
+    transition: 2s linear;
+}
+.body4{
+    background-color:#33234d;
+    color: #d8e6e5;
+    font-family: 'Song Myung', serif;
+    transition: 2s linear;
+}
+
 section{
     margin: 30px;
 }
