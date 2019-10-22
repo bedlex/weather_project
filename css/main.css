@@ -439,3 +439,13 @@ strong{
     background-color: #919191;
     opacity: 0.5;
 }
+
+@media only screen and (max-width: 1199px){
+    .input{
+        width:100%;
+    }
+    .btn1{
+        margin: 0 auto;
+    }
+}
+ 
