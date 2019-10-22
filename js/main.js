@@ -88,7 +88,7 @@ function check(){
                     document.getElementById("precipitation3").className="";
                     document.getElementById("thunderbolt").className="";
                     document.getElementById("table").className="";
-                    if(data.weather[0].description == "mist"){
+                    if(data.weather[0].description == "mist" || data.weather[0].description == "fog"){
                         document.getElementById("table").className="mist"
                        
                     }
