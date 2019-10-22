@@ -41,23 +41,13 @@ function time(off){
   var day = dt.getDate()
   var hours = dt.getHours()
   var minutes = dt.getMinutes()
-    if (hours>=0 && hours <5){
-        document.body.className="body1";
-    }
-    else if (hours>=5 && hours <11){
-        document.body.className="body2";
-    }
-    else if (hours>=11 && hours <17)
-    {
+    if (hours>=7 && hours <20){
         document.body.className="body3";
-       
-    }
-    else if (hours >= 17 && hours < 21)
-    {
-        document.body.className="body4";
+        document.getElementById("sky__object").className ="sun";
     }
     else{
         document.body.className="body1";
+        document.getElementById("sky__object").className ="moon";
     }
     console.log(month)
   var time_str = align(hours)+":"+align(minutes)+"<br>"+align(day)+"/"+align(month)+"/"+year
@@ -77,7 +67,8 @@ function check(){
             success:function(s){
                 $.get('https://api.openweathermap.org/data/2.5/weather?q='+city+','+country+'&appid='+key,function(data){
                     $("#city").text(data.name)                    
-                    $("#temp").html(farengheit(data.main.temp)+" F<sup>o<sup>")                    
+                    $("#temp").html(farengheit(data.main.temp)+" F<sup>o<sup>")
+                    $("#description").html(data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1))                    
                     $("#pressure").html("Pressure: "+data.main.pressure+" Hpa")
                     $("#humidity").html("Humidity: "+data.main.humidity+' %')
                     $("#temp_min_text").html("Minimal Temperature: "+farengheit(data.main.temp_min)+" F<sup>o<sup>")
@@ -85,6 +76,75 @@ function check(){
                     $("#visibility_text").html("Visibility: " + feets(data.visibility)+ " feet")
                     $("#wind_speed_text").html("Wind Speed: " +speed(data.wind.speed)+" mph")   
                     $("#time").html(time(data.timezone))
+                   /**  document.getElementById("cloud").className="cloud";
+                    document.getElementById("bad__cloud").className="bad__cloud";
+                    document.getElementById("precipitation1").className="snow1";
+                    document.getElementById("precipitation2").className="snow2";
+                    document.getElementById("precipitation3").className="snow3";*/
+                     
+                    if(data.weather[0].description == "clear sky"){
+                        document.getElementById("cloud").className="";
+                        document.getElementById("bad__cloud").className="";
+                        document.getElementById("precipitation1").className="";
+                        document.getElementById("precipitation2").className="";
+                        document.getElementById("precipitation3").className="";
+                        document.getElementById("thunderbolt").className="";
+                    }
+                    else if(data.weather[0].description == "few clouds"){
+                        document.getElementById("cloud").className="cloud";
+                        document.getElementById("bad__cloud").className="";
+                        document.getElementById("precipitation1").className="";
+                        document.getElementById("precipitation2").className="";
+                        document.getElementById("precipitation3").className="";
+                        document.getElementById("thunderbolt").className="";
+                    }
+                    else if(data.weather[0].description == "scattered clouds"){
+                        document.getElementById("cloud").className="";
+                        document.getElementById("bad__cloud").className="bad__cloud";
+                        document.getElementById("precipitation1").className="";
+                        document.getElementById("precipitation2").className="";
+                        document.getElementById("precipitation3").className="";
+                        document.getElementById("thunderbolt").className="";
+                    }
+                    else if(data.weather[0].description == "shower rain"){
+                        document.getElementById("cloud").className="cloud";
+                        document.getElementById("bad__cloud").className="bad__cloud";
+                        document.getElementById("precipitation1").className="rain1";
+                        document.getElementById("precipitation2").className="rain2";
+                        document.getElementById("precipitation3").className="rain3";
+                        document.getElementById("thunderbolt").className="";
+                    }
+                    else if(data.weather[0].description == "rain"){
+                        document.getElementById("cloud").className="cloud";
+                        document.getElementById("bad__cloud").className="bad__cloud";
+                        document.getElementById("precipitation1").className="rain1";
+                        document.getElementById("precipitation2").className="rain2";
+                        document.getElementById("precipitation3").className="rain3";
+                        document.getElementById("thunderbolt").className="";
+                    }
+                    else if(data.weather[0].description == "thunderstorm"){
+                        document.getElementById("cloud").className="cloud";
+                        document.getElementById("bad__cloud").className="bad__cloud";
+                        document.getElementById("precipitation1").className="rain1";
+                        document.getElementById("precipitation2").className="rain2";
+                        document.getElementById("precipitation3").className="rain3";
+                        document.getElementById("thunderbolt").className="bolt";
+                    }
+                    else if(data.weather[0].description == "snow"){
+                        document.getElementById("cloud").className="cloud";
+                        document.getElementById("bad__cloud").className="bad__cloud";
+                        document.getElementById("precipitation1").className="snow1";
+                        document.getElementById("precipitation2").className="snow2";
+                        document.getElementById("precipitation3").className="snow3";
+                        document.getElementById("thunderbolt").className="";
+                    }
+                    else if (data.weather[0].description == "broken clouds"){
+                        document.getElementById("cloud").className="cloud";
+                        document.getElementById("bad__cloud").className="bad__cloud";
+                        document.getElementById("precipitation1").className="";
+                        document.getElementById("precipitation2").className="";
+                        document.getElementById("precipitation3").className="";
+                    }
     })
             },
             error:function(){

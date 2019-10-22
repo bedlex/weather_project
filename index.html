@@ -15,9 +15,13 @@
     <div class="container d-flex justify-content-center">
     <section>
         <form action="#" name="submit_form" id="weather_form" class="form-group">
+            <label for="city">City: </label>
             <input type="text" name="city">
+            
+            <label for="counrtry">Country: </label>
             <input type="text" name="country">
-            <button onclick="check()" type="button" class="btn">Get Wheather</button>
+            
+            <button onclick="check()" type="button" class="btn btn1">Get Wheather</button>
         </form>
     </section>
     </div>
@@ -46,24 +50,47 @@
         </tr>
     </table>
     -->
-    <section>
-   <p id="city"></p>
-   <p id="time"></p>
-   <strong id="temp"></strong>
-   <br>
-   <strong id="pressure"></strong>
-   <br>
-   <strong id="humidity_text"></strong><strong id="humidity"></strong>
-   <br>
-   <strong id="temp_min_text"></strong>
-   <br>
-   <strong id="temp_max_text"></strong>
-   <br>
-   <strong id="visibility_text"></strong>
-   <br>
-   <strong id="wind_speed_text"></strong>
+    
+        <table>
+            <tr>
+                <td>
+                    <section>
+                      <p id="city"></p>
+                      <p id="time"></p>
+                      <strong id="temp"></strong>
+                      <br>
+                      <p id="description"></p>
+                      <br>
+                      <strong id="pressure"></strong>
+                      <br>
+                      <strong id="humidity_text"></strong><strong id="humidity"></strong>
+                      <br>
+                      <strong id="temp_min_text"></strong>
+                      <br>
+                      <strong id="temp_max_text"></strong>
+                      <br>
+                      <strong id="visibility_text"></strong>
+                      <br>
+                      <strong id="wind_speed_text"></strong>
+                    </section> 
+                </td>
+                <td>
+                    <div id="sky__object"></div>
+                    <div id="cloud"></div>
+                    <div id="bad__cloud"></div>
+                    <div id="precipitation1"></div>
+                    <div id="precipitation2"></div>
+                    <div id="precipitation3"></div>
+                    <div id="thunderbolt"></div>
+                    <div id="mist"></div>
+                </td>
 
-    </section>
+
+
+            </tr>
+        </table>
+   
+    
     </div>
 
 </body>

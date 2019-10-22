@@ -18,7 +18,7 @@ body{
     transition: 2s linear;
 }  
 .body3{
-    background-color:#2d402d;
+    background-color:#5478b3;
     color: #d8e6e5;
     font-family: 'Song Myung', serif;
     transition: 2s linear;
@@ -29,12 +29,15 @@ body{
     font-family: 'Song Myung', serif;
     transition: 2s linear;
 }
-
+label{
+    margin: 0 20px;
+}
 section{
     margin: 30px;
 }
 .btn{
     color: #d8e6e5;
+    margin: 0 20px;
 }
 #time{
     font-size: 25px;
@@ -46,7 +49,385 @@ section{
 #city{
     font-size: 52px;
 }
+#description{
+    margin-top:20px;
+    font-size: 22px;
+}
 
 strong{
     font-weight: 100;
 }
+/*Animation*/
+
+.sun{
+    top:-120px;
+    left:0px;
+    position: relative;
+    width:60px;
+    height: 60px;
+    background-color: yellow;
+    border-radius: 50%;
+    animation: move__object 4s ease-in-out;
+    box-shadow: 0px 0px 90px #fff;
+}
+
+.moon{
+    top:-120px;
+    left:0px;
+    position: relative;
+    width:60px;
+    height: 60px;
+
+    border-radius: 50%;
+    animation: move__object 3s ease-in-out;
+    box-shadow: inset -12px -2px 0 1px #f3d076;
+}
+
+@keyframes move__object{
+    0%{ 
+        top:-210px; 
+        opacity: 0;
+    }
+    25%{
+        opacity: 0;
+    }
+    100%{ 
+        top:-120px;
+        opacity:1;
+    }
+}
+
+/*cloud*/
+.cloud{
+    position: relative;
+    width:40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    left: 0px;
+    top: -150px;
+    animation: move__clouds 2s ease-in-out;
+    z-index: 1;
+    
+}
+.cloud::before{
+    
+    content: "";
+    position: absolute;
+    width:35px;
+    height: 35px;
+    background-color: #fff;
+    left: -10px;
+    bottom:-5px;
+    border-radius: 35px;
+    
+}
+
+.cloud::after{
+    content: "";
+    position:absolute;
+    width:55px;
+    height: 25px;
+    background-color: #fff;
+    left: -5px;
+    bottom: -5px;
+    border-radius: 25px;
+    
+    
+}
+@keyframes move__clouds{
+    from{
+        left: -90px;
+        opacity: 0;
+    }
+    to{
+        left: 0px;
+    }
+}
+
+/*Bad cloud*/
+.bad__cloud{
+    position: relative;
+    width:30px;
+    height: 30px;
+    background-color: #919191;
+    border-radius: 50%;
+    left: 45px;
+    top: -200px;
+    animation: move__bad__clouds 2s ease-in-out;
+    z-index: 0;
+    
+}
+.bad__cloud::before{
+    
+    content: "";
+    position: absolute;
+    width:25px;
+    height: 25px;
+    background-color:#919191;
+    left: -10px;
+    bottom:-5px;
+    border-radius: 35px;
+    
+}
+
+.bad__cloud::after{
+    content: "";
+    position:absolute;
+    width:45px;
+    height: 17px;
+    background-color:#919191;
+    left: -5px;
+    bottom: -5px;
+    border-radius: 25px;
+    
+    
+}
+@keyframes move__bad__clouds{
+    from{
+        left: 145px;
+        opacity: 0;
+    }
+    to{
+        left: 45px;
+    }
+}
+
+/*rain*/
+.rain1{
+    position: relative;
+    
+    background-color: blue;
+    height: 20px;
+    width: 3px;
+    border-radius: 7px;
+    transform: rotate(30deg);
+    opacity: 0;
+    animation: rain__start1 0.6s infinite linear;
+    animation-delay: 2s;
+}
+.rain2{
+    position: relative;
+    
+    background-color: blue;
+    height: 10px;
+    width: 3px;
+    border-radius: 7px;
+    transform: rotate(30deg);
+    opacity: 0;
+    animation: rain__start2 0.5s infinite linear;
+    animation-delay: 2s;
+}    
+.rain3{
+    position: relative;
+    
+    background-color: blue;
+    height: 18px;
+    width: 3px;
+    border-radius: 7px;
+    transform: rotate(30deg);
+    opacity: 0;
+    animation: rain__start3 0.7s infinite linear;
+    animation-delay: 2s;
+}    
+
+
+@keyframes rain__start1{
+    0%{
+        opacity: 0;
+        top: -200px;
+        left: 20px;
+    }
+    5%{
+        opacity: 1;
+    }
+    
+   
+    100%
+    {   
+        left: -10px;
+        top: -130px;
+        opacity: 0;
+    }
+}
+
+
+
+@keyframes rain__start2{
+    0%{
+        opacity: 0;
+        top: -210px;
+        left: 40px;
+    }
+    5%{
+        opacity: 1;
+    }
+    
+   
+    100%
+    {   
+        left: 10px;
+        top: -140px;
+        opacity: 0;
+    }
+}
+@keyframes rain__start3{
+     0%{
+        opacity: 0;
+        top: -230px;
+        left: 60px;
+    }
+    5%{
+        opacity: 1;
+    }
+        
+       
+    100%
+    {   
+        left: 35px;
+        top: -155px;
+        opacity: 0;
+    }
+}
+/*snow*/
+.snow1{
+    position: relative;
+    background-color: rgb(238, 238, 238);
+    height: 3px;
+    width: 3px;
+    border-radius: 7px;
+    transform: rotate(30deg);
+    opacity: 0;
+    animation: snow__start1 0.6s infinite linear;
+    animation-delay: 2s;
+}
+.snow2{
+    position: relative;   
+    background-color: rgb(238, 238, 238);
+    height: 3px;
+    width: 3px;
+    border-radius: 7px;
+    transform: rotate(30deg);
+    opacity: 0;
+    animation: snow__start2 0.5s infinite linear;
+    animation-delay: 2s;
+}    
+.snow3{
+    position: relative;   
+    background-color: rgb(238, 238, 238);
+    height: 3px;
+    width: 3px;
+    border-radius: 7px;
+    transform: rotate(30deg);
+    opacity: 0;
+    animation: snow__start3 0.7s infinite linear;
+    animation-delay: 2s;
+}    
+
+
+@keyframes snow__start1{
+    0%{
+        opacity: 0;
+        top: -200px;
+        left: 20px;
+    }
+    5%{
+        opacity: 1;
+    }
+    
+   
+    100%
+    {   
+        left: -10px;
+        top: -130px;
+        opacity: 0;
+    }
+}
+
+
+
+@keyframes snow__start2{
+    0%{
+        opacity: 0;
+        top: -210px;
+        left: 40px;
+    }
+    5%{
+        opacity: 1;
+    }
+    
+   
+    100%
+    {   
+        left: 10px;
+        top: -140px;
+        opacity: 0;
+    }
+}
+
+@keyframes snow__start3{
+    0%{
+        opacity: 0;
+        top: -200px;
+        left: 60px;
+    }
+    5%{
+        opacity: 1;
+    }
+        
+       
+    100%
+    {   
+        left: 25px;
+        top: -125px;
+        opacity: 0;
+    }
+}
+
+
+/**thunder bolt**/
+.bolt {
+    position: relative;
+
+    border-top: 30px solid yellow;
+	border-left: 6px solid transparent;
+	border-right: 4px solid transparent;
+	height: 0px;
+    width: 14px;
+    transform: rotate(7deg);
+    opacity: 0;
+    animation: thunder 0.7s infinite ease-in-out;
+    animation-delay: 2s;
+}
+
+.bolt::before{
+    position: relative;
+    top:14px;
+    left:-0px;
+    content: "";
+    width: 0;
+    height: 0;
+	border-left: 5px solid transparent;
+	border-right: 7px solid transparent;
+	border-top: 35px solid yellow;
+}
+
+
+@keyframes thunder{
+    0%{
+        top: -225px;
+        left:20px;
+    }
+    18%{
+        opacity: 0;
+    }
+    20%{
+        opacity:1;
+    }
+    100%{
+        opacity:1;
+        top: -165px;
+        left:5px;
+    }
+}
+
