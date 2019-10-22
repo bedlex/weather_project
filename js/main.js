@@ -123,7 +123,7 @@ function check(){
                         document.getElementById("precipitation3").className="rain3";
                         document.getElementById("thunderbolt").className="bolt";
                     }
-                    else if(data.weather[0].description == "snow"){
+                    else if(data.weather[0].description == "snow" || data.weather[0].description == "light snow"){
                         document.getElementById("cloud").className="cloud";
                         document.getElementById("bad__cloud").className="bad__cloud";
                         document.getElementById("precipitation1").className="snow1";
