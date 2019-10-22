@@ -81,30 +81,23 @@ function check(){
                     document.getElementById("precipitation1").className="snow1";
                     document.getElementById("precipitation2").className="snow2";
                     document.getElementById("precipitation3").className="snow3";*/
-                     
-                    if(data.weather[0].description == "clear sky"){
-                        document.getElementById("cloud").className="";
-                        document.getElementById("bad__cloud").className="";
-                        document.getElementById("precipitation1").className="";
-                        document.getElementById("precipitation2").className="";
-                        document.getElementById("precipitation3").className="";
-                        document.getElementById("thunderbolt").className="";
+                    document.getElementById("cloud").className="";
+                    document.getElementById("bad__cloud").className="";
+                    document.getElementById("precipitation1").className="";
+                    document.getElementById("precipitation2").className="";
+                    document.getElementById("precipitation3").className="";
+                    document.getElementById("thunderbolt").className="";
+                    document.getElementById("table").className="";
+                    if(data.weather[0].description == "mist"){
+                        document.getElementById("table").className="mist"
+                       
                     }
                     else if(data.weather[0].description == "few clouds"){
                         document.getElementById("cloud").className="cloud";
-                        document.getElementById("bad__cloud").className="";
-                        document.getElementById("precipitation1").className="";
-                        document.getElementById("precipitation2").className="";
-                        document.getElementById("precipitation3").className="";
-                        document.getElementById("thunderbolt").className="";
+                       
                     }
                     else if(data.weather[0].description == "scattered clouds"){
-                        document.getElementById("cloud").className="";
-                        document.getElementById("bad__cloud").className="bad__cloud";
-                        document.getElementById("precipitation1").className="";
-                        document.getElementById("precipitation2").className="";
-                        document.getElementById("precipitation3").className="";
-                        document.getElementById("thunderbolt").className="";
+                        document.getElementById("bad__cloud").className="bad__cloud";                  
                     }
                     else if(data.weather[0].description == "shower rain"){
                         document.getElementById("cloud").className="cloud";
@@ -112,7 +105,7 @@ function check(){
                         document.getElementById("precipitation1").className="rain1";
                         document.getElementById("precipitation2").className="rain2";
                         document.getElementById("precipitation3").className="rain3";
-                        document.getElementById("thunderbolt").className="";
+                        
                     }
                     else if(data.weather[0].description == "rain"){
                         document.getElementById("cloud").className="cloud";
@@ -120,7 +113,7 @@ function check(){
                         document.getElementById("precipitation1").className="rain1";
                         document.getElementById("precipitation2").className="rain2";
                         document.getElementById("precipitation3").className="rain3";
-                        document.getElementById("thunderbolt").className="";
+                   
                     }
                     else if(data.weather[0].description == "thunderstorm"){
                         document.getElementById("cloud").className="cloud";
@@ -136,14 +129,17 @@ function check(){
                         document.getElementById("precipitation1").className="snow1";
                         document.getElementById("precipitation2").className="snow2";
                         document.getElementById("precipitation3").className="snow3";
-                        document.getElementById("thunderbolt").className="";
+                       
                     }
                     else if (data.weather[0].description == "broken clouds"){
                         document.getElementById("cloud").className="cloud";
                         document.getElementById("bad__cloud").className="bad__cloud";
-                        document.getElementById("precipitation1").className="";
-                        document.getElementById("precipitation2").className="";
-                        document.getElementById("precipitation3").className="";
+                        document.getElementById("bad__cloud").className="bad__cloud";
+                        
+                    }
+                    else if (data.weather[0].description == "overcast clouds"){
+                        document.getElementById("cloud").className="cloud";
+                        document.getElementById("bad__cloud").className="bad__cloud";
                     }
     })
             },

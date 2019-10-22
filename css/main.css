@@ -57,6 +57,10 @@ section{
 strong{
     font-weight: 100;
 }
+
+#table{
+    border-radius: 20px;
+}
 /*Animation*/
 
 .sun{
@@ -431,3 +435,7 @@ strong{
     }
 }
 
+.mist{
+    background-color: #919191;
+    opacity: 0.5;
+}
